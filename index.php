@@ -2,7 +2,7 @@
   session_start();
   require __DIR__ . '/functions.php';
   $id = getUserId();
- 
+  $name = getCurrentUser();
 ?>
 
 <html>
@@ -15,7 +15,7 @@
   <a href="login.php">залогиниться</a><br>
   <a href="reg.php">регистрация</a>
 <?php else: ?>
-  <?= $_SESSION["name"] ?><br>
+  <?= $name ?><br>
     <a href="lk.php">Личный кабинет</a><br>
     <a href="logout.php">разлогиниться</a><br>
 

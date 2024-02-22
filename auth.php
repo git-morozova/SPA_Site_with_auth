@@ -21,7 +21,8 @@
         for ($i = 0;$i < count($users);$i++) {        
             if ($login == $users[$i]['login']) {
                 $_SESSION["id"] = $i;
-                $_SESSION["name"] = $users[$i]['name'];                
+                $_SESSION["name"] = $users[$i]['name'];  
+                $_SESSION["birthDate"] = $users[$i]['birthDate'];          
             } 
         }    
 

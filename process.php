@@ -4,6 +4,7 @@
     $login = $_POST['login'];
     $password = $_POST['password'];
     $name = $_POST['name'];
+    $birthDate = $_POST['birthDate']; 
 
     // Проверка на ошибки ввода данных в поля формы регистрации 
     if (!$login || !$password || !$name) {    
@@ -21,7 +22,8 @@
         $newUser = array(
         'name' => $name,
         'login' => $login,
-        'password' => md5($password)
+        'password' => md5($password),
+        'birthDate' => "$birthDate", //вида "2000-01-31"
         );
 
         $users[] = $newUser;
@@ -39,7 +41,13 @@
         
         // Записываем в суперглобальную переменную $_SESSION параметры нового пользователя    
         $_SESSION["id"] = $id;
-        $_SESSION["name"] = $name; 
+        $_SESSION["name"] = $name;
+        $_SESSION["birthDate"] = $birthDate;
+        
+        // Записываем время окончания акции (+24 часа к времени регистрации юзера)
+        $entryTime = new DateTime(date("Ymd H:i:s"));
+        date_modify($entryTime, "+1 day");
+        $_SESSION["expireTime"] = $entryTime;
 
         // Перенаправление в личный кабинет 
         header("Location: lk.php");

@@ -1,7 +1,12 @@
-<?php 
+<?php
     session_start();
-    //залогинен - редирект на главную
-    //не залогинен - вывод формы
+    require __DIR__ . '/functions.php';
+    $id = getUserId();
+
+    // проверка аутентификации. Если юзер залогинен - редирект на главную
+    if ($id !== null) {
+        header("Location: index.php");
+    }
 ?>
 
 <html>
@@ -12,7 +17,8 @@
         <input name="login" type="text" placeholder="Логин">
         <input name="password" type="password" placeholder="Пароль">
         <input name="name" type="name" placeholder="Имя">
-        <input name="submit" type="submit" value="Войти">
+        <input name="birthDate" type="date" placeholder="Дата рождения">(не обязательно)
+        <input name="submit" type="submit" value="Зарегистрироваться">
     </form>
 
 <?php 
