@@ -1,7 +1,7 @@
 <?php 
-session_start();
-require __DIR__ . '/functions.php';
-$id = getUserId();
+  session_start();
+  require __DIR__ . '/functions.php';
+  $id = getUserId();
 ?>
 
 <html>
@@ -17,6 +17,8 @@ $id = getUserId();
   <?= $_SESSION["name"] ?><br>
     <a href="lk.php">Личный кабинет</a><br>
     <a href="logout.php">разлогиниться</a><br>
+    Ваша персональная скидка 10% сгорит через ... часов ... минут ... секунд!
+    <?= $_SESSION["entryTime"] ?><br>
 <?php endif; ?>
 
   </body>

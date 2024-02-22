@@ -1,7 +1,7 @@
 <?php
-session_start();
-require __DIR__ . '/functions.php';
-$name = getCurrentUser();
+    session_start();
+    require __DIR__ . '/functions.php';
+    $name = getCurrentUser();
 ?>
 
     Это личный кабинет<br>
