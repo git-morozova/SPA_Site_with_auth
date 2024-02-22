@@ -24,7 +24,11 @@
                 $_SESSION["name"] = $users[$i]['name'];                
             } 
         }    
-        $_SESSION["entryTime"] = date("d-m-Y H:i:s"); 
+
+        // Записываем время окончания акции (+24 часа к времени аутентификации юзера)
+        $entryTime = new DateTime(date("Ymd H:i:s"));
+        date_modify($entryTime, "+1 day");
+        $_SESSION["expireTime"] = $entryTime;
 
         // Перенаправление в личный кабинет 
         header("Location: lk.php");
