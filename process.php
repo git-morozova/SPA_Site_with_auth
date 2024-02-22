@@ -1,3 +1,4 @@
+<pre>
 <?php
 require __DIR__ . '/functions.php';
 
@@ -15,26 +16,34 @@ if (!$login || !$password || !$name) {
     // Успех - начало сессии 
     session_start(); 
 
-    // Записываем в суперглобальную переменную $_SESSION параметры пользователя    
-    $_SESSION["id"] = count($users);
-    $_SESSION["name"] = $name;
-    $_SESSION["login"] = $login;
-    $_SESSION["password"] = $password;
-
     // Добавляем нового юзера в файл json
-    $json = file_get_contents('users.json');
-    $data = json_decode($json, true);
+    $users = getUsersList(); 
+    
     $newUser = array(
-    'id' => count($users),
     'name' => $name,
     'login' => $login,
-    'password' => $password
+    'password' => md5($password)
     );
-    array_push($data, $newUser);
-    $json = json_encode($data);
-    file_put_contents('users.json', $json);         
+
+    $users[] = $newUser;
+    $json = json_encode($users, JSON_FORCE_OBJECT); 
+    file_put_contents("users.json", $json);
+
+    //после записи нового объекта в json определяем id нового юзера. На всякий случай определяем его по логину  
+    foreach ($users as $key => $obj)  {  
+        foreach ($obj as $param => $value)  {  
+            if ($value == $login) {
+                $id = $key;
+            }         
+        }        
+    }   
+    
+    // Записываем в суперглобальную переменную $_SESSION параметры нового пользователя    
+    $_SESSION["id"] = $id;
+    $_SESSION["name"] = $name; 
 
     // Перенаправление в личный кабинет 
-    //header("Location: lk.php");
+    header("Location: lk.php");
 }
 ?>
+</pre>

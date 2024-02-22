@@ -15,6 +15,7 @@ if (!$login || !$password) {
 
     // Успех - начало сессии 
     session_start(); 
+    $users = getUsersList();
 
     // Записываем в суперглобальную переменную $_SESSION параметры пользователя
     for ($i = 0;$i < count($users);$i++) {        

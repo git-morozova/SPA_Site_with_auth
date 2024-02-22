@@ -1,8 +1,12 @@
 <?php 
 session_start();
-//залогинен - редирект на главную
-//не залогинен - вывод формы
-?>
+require __DIR__ . '/functions.php';
+$id = getUserId();
+
+// проверка аутентификации. Если юзер залогинен - редирект на главную
+if ($id !== null): 
+    header("Location: index.php"); 
+ else: ?>    
 
 <html>
 <body>
@@ -33,6 +37,7 @@ if (str_contains($url, 'error=')) {
     }    
 }
 ?>
-
 </body>
 </html>
+
+<?php endif; ?>
