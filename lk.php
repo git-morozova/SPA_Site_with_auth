@@ -23,9 +23,9 @@
 ?>
 
 <?php if ($birthDate != null && $birthDate == $currentDate): //ДР - сегодня 
-    $_SESSION["birthDay"] = 1;     // Запишем эту информацию в $_SESSION
+    $_SESSION["birthDay"] = 1;     // Запишем про это в $_SESSION
 ?>
-    Поздравляем вас с днем рождения! Для вас подготовлен подарок - скидка 5% на все услуги салона. <br>
+    Поздравляем вас с днем рождения! Для вас подготовлен подарок - дополнительная скидка 5% на все услуги салона. <br>
     <a href="index.php">Получить скидку</a><br>
 
 <?php elseif ($birthDate != null): //считаем, сколько дней до ДР
@@ -83,7 +83,7 @@ if (str_contains($url, 'submit=')) {
         file_put_contents("users.json", $json);    
     
         $_SESSION["birthDate"] = $birthDate; // Новая запись в сессии
-        header('Location: '.$_SERVER['REQUEST_URI']); // Обновляем страницу, чтобы исчезла форма с просьбой указать ДР
+        header('Location: '.$_SERVER['REQUEST_URI']); // Обновляем страницу, чтобы исчезла форма с просьбой указать ДР и вывелась инфа про ДР
     
     } else {
         echo ("Ошибка ввода данных");

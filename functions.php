@@ -55,4 +55,14 @@
     function getUserId() {   
         return $_SESSION["id"] ?? null;
     }
+
+    // для проверки ДР
+    function getBirthDay() {   
+        return $_SESSION["birthDay"] ?? null;
+    }
+
+    // для проверки, положена ли скидка 10%
+    function getSale() {   
+        return $_SESSION["sale"] ?? null;
+    }
 ?>
