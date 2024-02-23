@@ -42,12 +42,16 @@
         // Записываем в суперглобальную переменную $_SESSION параметры нового пользователя    
         $_SESSION["id"] = $id;
         $_SESSION["name"] = $name;
-        $_SESSION["birthDate"] = $birthDate;
+        $_SESSION["birthDate"] = $birthDate;        
         
-        // Записываем время окончания акции (+24 часа к времени регистрации юзера)
+        // Записываем время регистрации юзера
         $entryTime = new DateTime(date("Ymd H:i:s"));
-        date_modify($entryTime, "+1 day");
-        $_SESSION["expireTime"] = $entryTime;
+        $_SESSION["entryTime"] = $entryTime;
+
+        //Для времени окончания акции создаем отдельную переменную, т.к. иначе класс DateTime перезаписывается
+        $expireTime = new DateTime(date("Ymd H:i:s"));
+        date_modify($expireTime, "+1 day");
+        $_SESSION["expireTime"] = $expireTime;
 
         // Перенаправление в личный кабинет 
         header("Location: lk.php");

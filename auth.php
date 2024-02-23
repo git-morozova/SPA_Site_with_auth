@@ -26,10 +26,14 @@
             } 
         }    
 
-        // Записываем время окончания акции (+24 часа к времени аутентификации юзера)
+        // Записываем время аутентификации юзера
         $entryTime = new DateTime(date("Ymd H:i:s"));
-        date_modify($entryTime, "+1 day");
-        $_SESSION["expireTime"] = $entryTime;
+        $_SESSION["entryTime"] = $entryTime;
+
+        //Для времени окончания акции создаем отдельную переменную, т.к. иначе класс DateTime перезаписывается
+        $expireTime = new DateTime(date("Ymd H:i:s"));
+        date_modify($expireTime, "+1 day");
+        $_SESSION["expireTime"] = $expireTime;
 
         // Перенаправление в личный кабинет 
         header("Location: lk.php");

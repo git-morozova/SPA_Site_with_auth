@@ -23,13 +23,15 @@
 //таймер
   $expireTime = $_SESSION["expireTime"]; //время истечения акции
   $currentTime = new DateTime(date("Ymd H:i:s")); //текущее время
-  $interval = $expireTime->diff($currentTime); //разница
-?>
+  $interval = $expireTime->diff($currentTime); //разница  
+
+  if ($expireTime > $currentTime) {     //проверка, что срок акции еще не истек 
+?> 
 
     Ваша персональная скидка 10% сгорит через <?= $interval->format(' %h '); ?> часов
     <?= $interval->format(' %i '); ?> минут <?= $interval->format(' %s '); ?> секунд!
     
-<?php endif; ?>
+<?php } endif; ?>
 
   </body>
 </html>

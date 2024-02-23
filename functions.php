@@ -3,11 +3,9 @@
     //Сделала, как удобней для решения остальных пунктов ТЗ, то есть прописаны две отдельные функции:
 
     //функция getUsersList() возвращает массив всех пользователей;
-    function getUsersList() {
-        // получаем данные из JSON файла 
-        $usersString = file_get_contents("users.json");
-        // Преобразуем в массив
-        $users = json_decode($usersString, true);   
+    function getUsersList() {         
+        $usersString = file_get_contents("users.json"); // получаем данные из JSON файла        
+        $users = json_decode($usersString, true);    // Преобразуем в массив
         return $users; // возвращаем массив со всеми данными
     };
 
@@ -24,8 +22,6 @@
 
         return $loginPassArray;
     };
-
-
 
     //функция existsUser($login) проверяет, существует ли пользователь с указанным логином;
     function existsUser($login) {  
@@ -50,8 +46,6 @@
         return 0;
     };
 
-
-
     //функция getCurrentUser() которая возвращает либо имя вошедшего на сайт пользователя, либо null.
     function getCurrentUser() {   
         return $_SESSION["name"] ?? null;
@@ -61,5 +55,4 @@
     function getUserId() {   
         return $_SESSION["id"] ?? null;
     }
-
 ?>
