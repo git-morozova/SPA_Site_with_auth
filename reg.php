@@ -41,7 +41,8 @@
                                     <input name="login" type="text" placeholder="Логин">
                                     <input name="password" type="password" placeholder="Пароль">
                                     <input name="name" type="name" placeholder="Имя">
-                                    <input name="birthDate" type="date" placeholder="Дата рождения"> <!--(не обязательно)-->
+                                    <br><span style="color:#fff">Дата рождения (не обязательно)</span>
+                                    <input name="birthDate" type="date" placeholder="Дата рождения">
                                     <input name="submit" type="submit" class="btn btn-primary btn-block btn-large" value="Зарегистрироваться">
                                 </form>        
 
