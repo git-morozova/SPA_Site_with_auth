@@ -1,40 +1,34 @@
-Надо ли делать редиректы с технических страниц php? К примеру, functions.php, auth.php?
+# SPA Factory
+
+Демо сайт для СПА салона. Разработан в качестве практической работы, модуль 14. PHP. Сессии и Cookie.
 
 
-Пароли для входа в ЛК
+## Используемые технологии
 
-$users = array(
-    '0' => [
-        'login' => 'admin', 
-        'password' => '202cb962ac59075b964b07152d234b70' // pass - 123
-    ], 
-    '1' => [ 
-        'login' => 'user', 
-        'password' => '250cf8b51c773f3f8dc8b4be867a9a02' // pass - 456
-    ], 
-    '2' => [
-        'login' => 'irishka111', 
-        'password' => '68053af2923e00204c3ca7c6a3150cf7' // pass - 789
-    ], 
-);
+* PHP
 
-Уместны ли такие функции? Есть другие инструменты, которые просто проверяют, существует ли параметр/переменная
+* HTML
 
-    function getUserId() {   
-        return $_SESSION["id"] ?? null;
-    }
+* CSS
 
-    
+* JS
 
-Задание на PHP, поэтому верстка взята из гугла:
-    https://codepen.io/amirsaleem/pen/ggLGbL
 
-    Карточки
-    https://codepen.io/veronicadev/embed/WJyOwG
+## Пароли для входа в Личный Кабинет сайта
 
-    Галерея
-    https://codepen.io/dudleystorey/pen/DvZjLz
+* admin 123
 
-    Формы
-    https://codepen.io/frytyler/pen/nJYVEO
-    
+* user 456
+
+* irishka111 789
+
+
+## Задание на PHP, поэтому верстка частично взята из шаблонов:
+
+* [Шапка и адаптив](https://codepen.io/amirsaleem/pen/ggLGbL)
+
+* [Карточки](https://codepen.io/veronicadev/embed/WJyOwG)
+
+* [Галерея](https://codepen.io/dudleystorey/pen/DvZjLz)
+
+* [Формы](https://codepen.io/frytyler/pen/nJYVEO)
