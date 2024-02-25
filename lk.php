@@ -66,6 +66,7 @@
     $_SESSION["birthDay"] = 1;     // Запишем про это в $_SESSION
 ?>
     Поздравляем вас с днем рождения! Для вас подготовлен подарок - дополнительная <b>скидка 5%</b> на все услуги салона
+    <br><a href="index.php" style="color:#ffffff">Смотреть услуги и цены</a>
 
 <?php elseif ($birthDate != null): //считаем, сколько дней до ДР
     // для начала приведем обе даты -текущую и ДР к единому году
@@ -138,12 +139,11 @@ if (str_contains($url, 'submit=')) {
     </div>   
   <!-- /ДЕНЬ РОЖДЕНИЯ -->   
 
-  
-  <!-- УСЛУГИ -->
-  <div class = "L-tewelve">
+    <!-- АКЦИИ -->
+    <div class = "L-tewelve">
       <div class = "row">
         <div class = "section">
-          <h1 class = "heading">Услуги салона</h1>
+          <h1 class = "heading">Акции</h1>
         </div> 
       </div>  
     </div>
@@ -151,46 +151,22 @@ if (str_contains($url, 'submit=')) {
     <div class = "L-tewelve services">
       <div class = "row">
         <div class = "section center_width">
-          <div class = "L-four T-tewelve S-tewelve">
+          <div class = "L-six T-tewelve S-tewelve">
             <div class = "box">
-                <article class="card card--1">  
+                <article class="card card--1">      
                       <div class="card__info">
-                        <div class="card__popular"> HOT!</div>
-                        <h2 class="card__title">Флоатинг</h2>  
-                        <div class="card__text"> 
-                          Cреда с нулевой гравитацией, которая позволяет телу и сознанию глубоко отдохнуть. 
-                        </div> 
-                        <div class="card__price">
-                          <?=getPrice("3000")?>
-                        </div>                  
+                        <div class="card__popular"> -5%</div>
+                        <h2 class="card__title">Скидка в день рождения</h2>                                   
                       </div>
                 </article>
             </div>
-          </div>
-          <div class = "L-four T-tewelve S-tewelve">
+          </div>     
+          <div class = "L-six T-tewelve S-tewelve">
             <div class = "box">
-                <article class="card card--1"> 
-                      <div class="card__info">
-                        <div class="card__popular"> HOT!</div>
-                        <h2 class="card__title">Спа массаж</h2>  
-                        <div class="card__text"> 
-                        Настоящий турецкий хаммам, сделанный с учетом всех национальный правил и традиций.
-                        </div> 
-                        <div class="card__price"><?=getPrice("4000")?></div>                  
-                      </div>
-                </article>
-            </div>
-          </div>
-          <div class = "L-four T-tewelve S-tewelve">
-            <div class = "box">
-                <article class="card card--1">  
+                <article class="card card--1">   
                         <div class="card__info">
-                          <div class="card__popular"> HOT!</div>
-                          <h2 class="card__title">Хаммам</h2>  
-                          <div class="card__text"> 
-                          Приведет Вас в отличное настроение, вернет здоровый сон или придаст бодрости.
-                          </div> 
-                          <div class="card__price"><?=getPrice("3500")?></div>                  
+                          <div class="card__popular"> -10%</div>
+                          <h2 class="card__title">Скидка за посещение сайта</h2>                 
                         </div>
                   </article>
             </div>
@@ -198,59 +174,9 @@ if (str_contains($url, 'submit=')) {
         </div>
       </div>
     </div>
+    <!-- /АКЦИИ -->
 
-    <div class = "L-tewelve services">
-      <div class = "row">
-        <div class = "section center_width">
-          <div class = "L-four T-tewelve S-tewelve">
-            <div class = "box">
-                <article class="card card--1">  
-                      <div class="card__info">
-                        <div class="card__popular"> &nbsp;</div>
-                        <h2 class="card__title">СПА программы</h2>  
-                        <div class="card__text"> 
-                        Наши мастера разработали программы для оздоровления и максимального расслабления. 
-                        </div> 
-                        <div class="card__price"><?=getPrice("7500")?></div>                  
-                      </div>
-                </article>
-            </div>
-          </div>
-          <div class = "L-four T-tewelve S-tewelve">
-            <div class = "box">
-                <article class="card card--1">                 
-                      
-                      <div class="card__info">
-                        <div class="card__popular"> &nbsp;</div>
-                        <h2 class="card__title">Для двоих</h2>  
-                        <div class="card__text"> 
-                        Прекрасный подарок к знаменательной дате, годовщине или просто знаком проявления заботы и любви.
-                        </div> 
-                        <div class="card__price"><?=getPrice("10000")?></div>                  
-                      </div>
-                </article>
-            </div>
-          </div>
-          <div class = "L-four T-tewelve S-tewelve">
-            <div class = "box">
-                <article class="card card--1">                 
-                        
-                        <div class="card__info">
-                          <div class="card__popular"> &nbsp;</div>
-                          <h2 class="card__title">Фитобочка</h2>  
-                          <div class="card__text"> 
-                          Минисауна, сочетающая в себе разные подходы паровых процедур с использованием отваров трав и масел.
-                          </div> 
-                          <div class="card__price"><?=getPrice("2500")?></div>                  
-                        </div>
-                  </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /УСЛУГИ -->
-
+  
     <!-- ФУТЕР -->
     <div class = "L-tewelve">
       <div class = "row">
