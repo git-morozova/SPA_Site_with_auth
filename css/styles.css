@@ -119,6 +119,17 @@
     background-size: cover;
     transition: all 0.1s ease 0s;
   }
+  .banner-wrapper-fixed-login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/hero.jpg');
+    background-position: center;
+    background-size: cover;
+    transition: all 0.1s ease 0s;
+  }
   .foreground {
     position: absolute;
     top: 0;
@@ -131,6 +142,13 @@
     text-align: center;
     color: #eee5d9;
     margin-top: 250px;
+    font-size: 50px;
+    padding: 0px 30px;
+    text-shadow: 3px 3px #00000054;
+  }
+  .banner-wrapper-fixed-login .foreground h1 {
+    text-align: center;
+    color: #eee5d9;
     font-size: 50px;
     padding: 0px 30px;
     text-shadow: 3px 3px #00000054;
@@ -293,7 +311,6 @@
 	width:350px;
 	height:300px;
 }
-
 .reg { 	
 	margin: 0 auto;
 	width:350px;

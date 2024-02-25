@@ -27,16 +27,19 @@
                             <li><a href="index.php">Главная</a></li>  
                     </ul>
             </header>
-            <div class="login">
-                <h1>Вход</h1>
-                <form action="auth.php" method="post">
-                    <input type="text" name="login" placeholder="Логин" />
-                    <input type="password" name="password" placeholder="Пароль"/>
-                    <input name="submit" type="submit" class="btn btn-primary btn-block btn-large" value="Войти">
-                </form>        
+           
+            <div class = "banner-wrapper-fixed-login">
+                    <div class = "foreground">                        
+                            <div class="login">
+                                <h1 class="log_h1">Вход</h1>
+                                <form action="auth.php" method="post">
+                                    <input type="text" name="login" placeholder="Логин" />
+                                    <input type="password" name="password" placeholder="Пароль"/>
+                                    <input name="submit" type="submit" class="btn btn-primary btn-block btn-large" value="Войти">
+                                </form>        
 
-                <div class = "L-tewelve red_row">
-                    <div class = "row">  
+                                <div class = "L-tewelve red_row">
+                                    <div class = "row">  
 
 <?php 
     // Вытаскиваем ошибку заполнения полей из get-параметров для того, чтобы вывести текст ошибки на экран
@@ -59,9 +62,14 @@
     }
 ?>
 
+                                    </div>
+                                </div>
+                            </div>                        
                     </div>
                 </div>
-            </div>
+                <div class = "wrapper_reg">
+                </div>
+
         </div>
     </body>
 </html>
