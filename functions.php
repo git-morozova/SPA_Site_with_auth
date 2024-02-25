@@ -65,4 +65,26 @@
     function getSale() {   
         return $_SESSION["sale"] ?? null;
     }
+
+    //для вывода цен
+    function getPrice($price) { 
+        $priceSale = $price;
+        $birthDay = getBirthDay();
+        $sale = getSale();      
+        
+        if ($birthDay == 1 && $sale == 1) {
+        $priceSale = $price * 0.85; //обе скидки активны
+        } elseif ($sale == 1) {
+        $priceSale = $price * 0.9; //скидка 10% за вход
+        } elseif ($birthDay == 1) {
+        $priceSale = $price * 0.95; //скидка 5% на ДР
+        }        
+      
+        if ($price == $priceSale) {  // если нет скидок - выводим одну цену 
+            echo ("<div>" . $price . " ₽</div>");
+          
+        } else { // есть скидки - выводим две цены
+            echo ("<div><s>" . $price . " ₽</s></div><div>" . $priceSale . " ₽</div>");        
+      } 
+    }
 ?>

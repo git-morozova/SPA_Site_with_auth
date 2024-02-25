@@ -10,13 +10,33 @@
 ?>
 
 <html>
-<body>
-    <form action="auth.php" method="post">
-        Вход в личный кабинет
-        <input name="login" type="text" placeholder="Логин">
-        <input name="password" type="password" placeholder="Пароль">
-        <input name="submit" type="submit" value="Войти">
-    </form>
+    <head>
+            <title>SPA Factory: Вход</title>
+            <link rel="stylesheet" href="css/styles.css">
+            <link rel="stylesheet" href="css/dop.css">
+    </head>
+    <body>        
+        <div class="form_back">
+            <header class = "header">
+                    <div class = "logo-container">
+                        <h1>&nbsp;</h1>
+                        <span class = "toggle-btn">&#9776;</span>
+                    </div> 
+                    <ul class = "display-none-mobile">
+                            <li><a href="reg.php">Регистрация</a></li>
+                            <li><a href="index.php">Главная</a></li>  
+                    </ul>
+            </header>
+            <div class="login">
+                <h1>Вход</h1>
+                <form action="auth.php" method="post">
+                    <input type="text" name="login" placeholder="Логин" />
+                    <input type="password" name="password" placeholder="Пароль"/>
+                    <input name="submit" type="submit" class="btn btn-primary btn-block btn-large" value="Войти">
+                </form>        
+
+                <div class = "L-tewelve red_row">
+                    <div class = "row">  
 
 <?php 
     // Вытаскиваем ошибку заполнения полей из get-параметров для того, чтобы вывести текст ошибки на экран
@@ -39,5 +59,9 @@
     }
 ?>
 
-</body>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

@@ -10,10 +10,50 @@
     }
 ?>
 
-    Это личный кабинет<br>
-    Здравствуйте, <?= $name ?><br>
+<html>
+  <head>
+    <title>SPA Factory: Личный кабинет</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dop.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <script src="js/script.js"></script>
+  </head>
+  <body>
 
-<?php   
+  <!-- ТОП -->
+    <div class = "L-tewelve"> 
+      <div class = "row">
+        <header class = "header">
+          <div class = "logo-container">
+            <h1>SPA&nbsp;Factory</h1>
+            <span class = "toggle-btn">&#9776;</span>
+          </div> 
+          <ul class = "display-none-mobile">
+                <li><a href="index.php">Главная</a></li>
+                <li><a href="logout.php">Выйти</a></li>  
+          </ul>
+        </header>
+        <div class = "banner-wrapper-fixed">
+          <div class = "foreground">
+            <h1>
+                    Это личный кабинет<br>
+                    Здравствуйте, <?= $name ?><br>
+            </h1>
+          </div>
+        </div>
+        <div class = "wrapper">
+        </div>
+      </div>
+    </div>
+  <!-- /ТОП -->
+
+  <!-- ДЕНЬ РОЖДЕНИЯ -->
+  <div class = "L-tewelve red_row">
+      <div class = "row ">  
+        <p>
+
+  <?php   
 // Дата рождения - задана в базе. Проверки ДР и вывод "... дней до ДР"
 
     $birthDate = $_SESSION["birthDate"];    //"2000-08-31"
@@ -25,8 +65,7 @@
 <?php if ($birthDate != null && $birthDate == $currentDate): //ДР - сегодня 
     $_SESSION["birthDay"] = 1;     // Запишем про это в $_SESSION
 ?>
-    Поздравляем вас с днем рождения! Для вас подготовлен подарок - дополнительная скидка 5% на все услуги салона. <br>
-    <a href="index.php">Получить скидку</a><br>
+    Поздравляем вас с днем рождения! Для вас подготовлен подарок - дополнительная <b>скидка 5%</b> на все услуги салона
 
 <?php elseif ($birthDate != null): //считаем, сколько дней до ДР
     // для начала приведем обе даты -текущую и ДР к единому году
@@ -54,17 +93,18 @@
 
     Дней до вашего дня рождения: <?= $interval ?>.
 
-
-
 <?php 
 // Дата рождения - не задана. Вызов формы для записи ДР в json
 else: ?> 
 
-    Пожалуйста, укажите дату рождения<br>
-    <form action="#" method="get">        
-        <input name="birthDate" type="date" placeholder="Дата рождения">
-        <input name="submit" type="submit" value="Сохранить">
-    </form>
+<div class = "birth_date">
+            <h3>Пожалуйста, укажите дату рождения</h3>
+            <form action="#" method="get">        
+                <input name="birthDate" type="date" placeholder="Дата рождения">
+                <input name="submit" type="submit" class="btn btn-primary btn-block btn-large" value="Сохранить">
+            </form>  
+</div> 
+                            
 
 <?php 
 $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
@@ -93,7 +133,133 @@ if (str_contains($url, 'submit=')) {
 
 <?php endif; ?>
 
-<br>
-<br>
-<a href="index.php">главная</a><br>
-<a href="logout.php">разлогиниться</a><br>
+         </p>    
+      </div>
+    </div>   
+  <!-- /ДЕНЬ РОЖДЕНИЯ -->   
+
+  
+  <!-- УСЛУГИ -->
+  <div class = "L-tewelve">
+      <div class = "row">
+        <div class = "section">
+          <h1 class = "heading">Услуги салона</h1>
+        </div> 
+      </div>  
+    </div>
+
+    <div class = "L-tewelve services">
+      <div class = "row">
+        <div class = "section center_width">
+          <div class = "L-four T-tewelve S-tewelve">
+            <div class = "box">
+                <article class="card card--1">  
+                      <div class="card__info">
+                        <div class="card__popular"> HOT!</div>
+                        <h2 class="card__title">Флоатинг</h2>  
+                        <div class="card__text"> 
+                          Cреда с нулевой гравитацией, которая позволяет телу и сознанию глубоко отдохнуть. 
+                        </div> 
+                        <div class="card__price">
+                          <?=getPrice("3000")?>
+                        </div>                  
+                      </div>
+                </article>
+            </div>
+          </div>
+          <div class = "L-four T-tewelve S-tewelve">
+            <div class = "box">
+                <article class="card card--1"> 
+                      <div class="card__info">
+                        <div class="card__popular"> HOT!</div>
+                        <h2 class="card__title">Спа массаж</h2>  
+                        <div class="card__text"> 
+                        Настоящий турецкий хаммам, сделанный с учетом всех национальный правил и традиций.
+                        </div> 
+                        <div class="card__price"><?=getPrice("4000")?></div>                  
+                      </div>
+                </article>
+            </div>
+          </div>
+          <div class = "L-four T-tewelve S-tewelve">
+            <div class = "box">
+                <article class="card card--1">  
+                        <div class="card__info">
+                          <div class="card__popular"> HOT!</div>
+                          <h2 class="card__title">Хаммам</h2>  
+                          <div class="card__text"> 
+                          Приведет Вас в отличное настроение, вернет здоровый сон или придаст бодрости.
+                          </div> 
+                          <div class="card__price"><?=getPrice("3500")?></div>                  
+                        </div>
+                  </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class = "L-tewelve services">
+      <div class = "row">
+        <div class = "section center_width">
+          <div class = "L-four T-tewelve S-tewelve">
+            <div class = "box">
+                <article class="card card--1">  
+                      <div class="card__info">
+                        <div class="card__popular"> &nbsp;</div>
+                        <h2 class="card__title">СПА программы</h2>  
+                        <div class="card__text"> 
+                        Наши мастера разработали программы для оздоровления и максимального расслабления. 
+                        </div> 
+                        <div class="card__price"><?=getPrice("7500")?></div>                  
+                      </div>
+                </article>
+            </div>
+          </div>
+          <div class = "L-four T-tewelve S-tewelve">
+            <div class = "box">
+                <article class="card card--1">                 
+                      
+                      <div class="card__info">
+                        <div class="card__popular"> &nbsp;</div>
+                        <h2 class="card__title">Для двоих</h2>  
+                        <div class="card__text"> 
+                        Прекрасный подарок к знаменательной дате, годовщине или просто знаком проявления заботы и любви.
+                        </div> 
+                        <div class="card__price"><?=getPrice("10000")?></div>                  
+                      </div>
+                </article>
+            </div>
+          </div>
+          <div class = "L-four T-tewelve S-tewelve">
+            <div class = "box">
+                <article class="card card--1">                 
+                        
+                        <div class="card__info">
+                          <div class="card__popular"> &nbsp;</div>
+                          <h2 class="card__title">Фитобочка</h2>  
+                          <div class="card__text"> 
+                          Минисауна, сочетающая в себе разные подходы паровых процедур с использованием отваров трав и масел.
+                          </div> 
+                          <div class="card__price"><?=getPrice("2500")?></div>                  
+                        </div>
+                  </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /УСЛУГИ -->
+
+    <!-- ФУТЕР -->
+    <div class = "L-tewelve">
+      <div class = "row">
+        <footer>
+          <p>SPA Factory - 2024</p>
+        </footer>
+      </div>
+    </div>
+    <!-- /ФУТЕР -->
+
+  </body>
+</html>

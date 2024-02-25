@@ -23,3 +23,18 @@ $users = array(
     function getUserId() {   
         return $_SESSION["id"] ?? null;
     }
+
+    
+
+Задание на PHP, поэтому верстка взята из гугла:
+    https://codepen.io/amirsaleem/pen/ggLGbL
+
+    Карточки
+    https://codepen.io/veronicadev/embed/WJyOwG
+
+    Галерея
+    https://codepen.io/dudleystorey/pen/DvZjLz
+
+    Формы
+    https://codepen.io/frytyler/pen/nJYVEO
+    
