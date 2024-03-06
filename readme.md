@@ -4,6 +4,8 @@
 Версия json выложена здесь на GIT.
 Версия MySQL - на [стороннем хостинге](https://osteo-dok.ru/spa/).
 
+![2024-03-06_23-45-42](https://github.com/git-morozova/SPA_Site_with_auth/assets/153770811/ca95e258-dd4b-4e85-8a8f-06390e1214ec)
+
 ## Используемые технологии
 
 * PHP
