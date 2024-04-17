@@ -25,12 +25,11 @@
             <div class = "row">   
                 <header class = "header">
                     <div class = "logo-container">
-                        <h1>SPA&nbsp;Factory</h1>
+                        <h1><a href="index.php">SPA&nbsp;Factory</a></h1>
                         <span class = "toggle-btn">&#9776;</span>
                     </div> 
                     <ul class = "display-none-mobile">
-                            <li><a href="login.php">Вход</a></li>
-                            <li><a href="index.php">Главная</a></li>  
+                            <li><a href="login.php">Вход</a></li> 
                     </ul>
                 </header>
                 <div class = "banner-wrapper-fixed">

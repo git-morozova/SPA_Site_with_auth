@@ -19,12 +19,11 @@
         <div class="form_back">
             <header class = "header">
                     <div class = "logo-container">
-                        <h1>&nbsp;</h1>
+                        <h1><a href="index.php">SPA&nbsp;Factory</a></h1>
                         <span class = "toggle-btn">&#9776;</span>
                     </div> 
                     <ul class = "display-none-mobile">
-                            <li><a href="reg.php">Регистрация</a></li>
-                            <li><a href="index.php">Главная</a></li>  
+                            <li><a href="reg.php">Регистрация</a></li> 
                     </ul>
             </header>
            
