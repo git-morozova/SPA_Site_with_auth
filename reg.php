@@ -48,27 +48,7 @@
 
                                 <div class = "L-tewelve red_row">
                                     <div class = "row">  
-
-                <?php 
-                    // Вытаскиваем ошибку заполнения полей из get-параметров для того, чтобы вывести текст ошибки на экран
-                    // Для этого нужно взять текущий url
-                    $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-
-                    // Проверить, есть ли в url параметр error
-                    if (str_contains($url, 'error=')) {
-
-                        // Если есть - вытаскиваем его
-                        $parts = parse_url($url); 
-                        parse_str($parts['query'], $query); 
-                        
-                        // Тексты для ошибок заполнения полей
-                        switch ($query['error']) {
-                        case 1: echo ("Пожалуйста, заполните все поля"); break;
-                        case 2: echo ("Такой пользователь уже существует"); break;      
-                        }    
-                    }
-                ?>
-
+                                      <?php showError() ?>
                                     </div>
                                 </div>
                             </div>                        

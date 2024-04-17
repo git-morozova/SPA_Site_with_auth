@@ -87,4 +87,26 @@
             echo ("<div><s>" . $price . " ₽</s></div><div>" . $priceSale . " ₽</div>");        
       } 
     }
+
+    // Вытаскиваем ошибку заполнения полей из get-параметров для того, чтобы вывести текст ошибки на экран
+    function showError() { 
+        // Для этого нужно взять текущий url
+        $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+        // Проверить, есть ли в url параметр error
+        if (str_contains($url, 'error=')) {
+
+            // Если есть - вытаскиваем его
+            $parts = parse_url($url); 
+            parse_str($parts['query'], $query); 
+            
+            // Тексты для ошибок заполнения полей
+            switch ($query['error']) {
+            case 1: echo ("Пожалуйста, заполните все поля"); break;
+            case 2: echo ("Такого пользователя не существует"); break;
+            case 3: echo ("Неправильный пароль"); break;
+            case 4: echo ("Такой пользователь уже существует"); break; 
+            }    
+        }
+    }
 ?>

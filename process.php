@@ -10,7 +10,7 @@
     if (!$login || !$password || !$name) {    
         header("Location: reg.php?error=1");
     } else if (existsUser($login) == 1) {
-        header("Location: reg.php?error=2");
+        header("Location: reg.php?error=4");
     } else {
 
         // Успех - начало сессии 
