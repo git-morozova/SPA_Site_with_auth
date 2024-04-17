@@ -56,21 +56,11 @@
         return $_SESSION["id"] ?? null;
     }
 
-    // для проверки ДР
-    function getBirthDay() {   
-        return $_SESSION["birthDay"] ?? null;
-    }
-
-    // для проверки, положена ли скидка 10%
-    function getSale() {   
-        return $_SESSION["sale"] ?? null;
-    }
-
     //для вывода цен
     function getPrice($price) { 
         $priceSale = $price;
-        $birthDay = getBirthDay();
-        $sale = getSale();      
+        $birthDay = $_SESSION["birthDay"] ?? null; // для проверки, положена ли скидка 5%
+        $sale = $_SESSION["sale"] ?? null;  // для проверки, положена ли скидка 10%    
         
         if ($birthDay == 1 && $sale == 1) {
         $priceSale = $price * 0.85; //обе скидки активны
